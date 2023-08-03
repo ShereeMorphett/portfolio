@@ -200,13 +200,15 @@ p {
 }
 
 .tm-img-container-2 {
-  background-image: url(../img/girl-01.jpg);
+  background-image: url(../img/coloured_lights.png);
   background-position: top center;
   margin-left: 8px;
 }
 
 .tm-img-container-3 {
-  background-image: url(../img/backpack-guy.jpg);
+  background-image: url(../img/coloured_lights.png);
+
+  object-position: 100%;
   background-position: top right;
 }
 

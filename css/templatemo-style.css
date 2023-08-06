@@ -264,20 +264,61 @@ p {
 }
 
 .tm-fl-right { float: right; }
-
-
-.image-grid
-{
+/* Add this CSS code to create the hover effect with the text overlay */
+.image-grid {
   --gap: 16px;
   --num-cols: 3;
   --row-height: 300px;
-
-  box-sizing: boarder-box;
+  box-sizing: border-box;
   padding: var(--gap);
   display: grid;
   grid-template-columns: repeat(var(--num-cols), 1fr);
-  grid-auto-rows:var(--row-height);
+  grid-auto-rows: var(--row-height);
   gap: var(--gap);
+}
+
+.image-grid .image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-grid .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-grid__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* The overlay background color with some transparency */
+  color: #FFFFFF; /* The text color for the overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hide the overlay */
+  transition: opacity 0.3s ease; /* Add a smooth transition effect */
+}
+
+.image-grid .image:hover .image-grid__overlay {
+  opacity: 1; /* Show the overlay when the image is hovered over */
+}
+
+/* Additional styling for the text inside the overlay */
+.image__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.image__description {
+  font-size: 14px;
+  text-align: center;
 }
 
 .image-grid > img
